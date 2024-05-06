@@ -13,8 +13,33 @@ async function fetchAPI(url) {
     }
 }
 
-const products = fetchAPI(url)
+// GET products
+const getProducts = await fetchAPI(url)
+
+// POST product
+async function createNewProduct(name, price, urlImage) {
+    try {
+        const product = await fetch(url, {
+            method: 'POST',
+            headers: {"Content-type": "application/json"},
+            body: JSON.stringify({
+                id: getProducts.length + 1,
+                name, 
+                price,
+                image: urlImage
+            })
+        })
+        if(!product.ok) {
+            throw new Error("Error al agregar el producto")
+        }
+        // const response = await product.json()
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 
 export const connectionAPI = {
-    products
+    getProducts, 
+    createNewProduct
 }
