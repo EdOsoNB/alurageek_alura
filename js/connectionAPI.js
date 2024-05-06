@@ -15,6 +15,7 @@ async function fetchAPI(url) {
 
 // GET products
 const getProducts = await fetchAPI(url)
+console.log(getProducts);
 
 // POST product
 async function createNewProduct(name, price, urlImage) {
@@ -23,7 +24,6 @@ async function createNewProduct(name, price, urlImage) {
             method: 'POST',
             headers: {"Content-type": "application/json"},
             body: JSON.stringify({
-                id: getProducts.length + 1,
                 name, 
                 price,
                 image: urlImage

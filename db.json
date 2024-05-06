@@ -1,10 +1,16 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Game Boy Classic",
-      "price": "60",
-      "image": "https://i.etsystatic.com/6017061/r/il/a95967/881348688/il_794xN.881348688_79dt.jpg"
+      "id": "935a",
+      "name": "Xbox Controller",
+      "price": "1234.50",
+      "image": "https://assets.xboxservices.com/assets/13/9c/139c696d-e8e3-4f08-9983-59435c1a5afd.jpg?n=768034_Gallery-0_1_1350x759_02.jpg"
+    },
+    {
+      "id": "f0eb",
+      "name": "PS4 Controller",
+      "price": "1035.50",
+      "image": "https://m.media-amazon.com/images/I/71uQYNKiKCL.jpg"
     }
   ]
 }

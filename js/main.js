@@ -56,3 +56,15 @@ ids.forEach(id => {
     }
    })
 })
+
+// Clear Form
+const clear = document.querySelector('#actions__clear')
+clear.addEventListener('click', () => {
+    let name = document.querySelector('#product-name')
+    let price = document.querySelector('#product-price')
+    let imageUrl =  document.querySelector('#product-image')
+
+    name.value = ''
+    price.value = ''
+    imageUrl.value = ''
+})
