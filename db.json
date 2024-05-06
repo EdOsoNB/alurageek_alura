@@ -1,0 +1,10 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Game Boy Classic",
+            "price": 6000,
+            "image": "https://i.etsystatic.com/6017061/r/il/a95967/881348688/il_794xN.881348688_79dt.jpg"
+        }
+    ]
+}
