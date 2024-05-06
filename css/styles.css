@@ -1,0 +1,173 @@
+:root {
+    --pink-primary-color: #8C0375;
+    --pink-second-color: #C004D9;
+    --pink-third-color: #9303A6;
+    --purple-color: #5D04D9;
+    --blue-color: #03318C;
+    --scroll-color: #D6D6D6;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    font-family: 'IBM Plex Mono';
+}
+h1, h2, h4 {
+    font-family: 'Press Start 2P';
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/* HEADER */
+header {
+    align-items: center;
+    background-color: var(--pink-third-color);
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    height: 96px;
+    padding: 20px 0;
+}
+
+/* PRODUCTS */
+.main {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* New product */
+.new-product {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+}
+.new-product__form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.new-product__form input:not([type="submit"]) {
+    border: 3px solid var(--blue-color);
+    border-radius: 30px;
+    color: var(--blue-color);
+    font-family: 'IBM Plex Mono';
+    font-weight: 600;
+    height: 58px;
+    padding: 10px;
+    width: 350px;
+}
+.new-product__form input::placeholder {
+    color: var(--blue-color);
+    font-family: 'IBM Plex Mono';
+}
+.actions {
+    align-items: center;
+    display: flex;
+    gap: 13px;
+    justify-content: center;
+}
+.actions .btn {
+    border: 3px solid var(--blue-color);
+    border-radius: 15px;
+    height: 55px;
+    width: 164px;
+}
+#actions__submit {
+    background-color: var(--blue-color);
+    color: #FFF
+}
+#actions__clear {
+    background: transparent;
+    color: var(--blue-color);
+}
+
+/* Products */
+.products {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 0px;
+}
+.products__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 8px;
+}
+.products__container .product {
+    background-color: var(--pink-third-color);
+    border: 3px solid #000;
+    border-radius: 10px;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.product .product__image {
+    background-color: gray;
+    border: 3px solid #000;
+    height: 174px;
+    width: 176px;
+}
+.product .product__name {
+    font-size: 15px;
+    font-weight: 400;
+}
+.product .product__info {
+    display: flex;
+    font-weight: 700;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--pink-third-color);
+    color: #FFF;
+    height: 168px;
+    text-align: center;
+    padding: 68px;
+}
+
+@media (min-width: 768px) {
+
+    .main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Products */
+    .products {
+        width: 758px;
+    }
+
+    /* New product */
+    .new-product {
+        justify-content: flex-start;
+        width: 472px;
+    }
+    .new-product__form input:not([type="submit"]) {
+        width: 392px;
+    }
+    .actions .btn {
+        width: 188px;
+    }
+}
