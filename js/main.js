@@ -16,7 +16,7 @@ products.forEach(product => {
             <p class="product__name">${name}</p>
             <div class="product__info">
                 <p class="product__price">$ ${price}</p>
-                <span><i class="fa-solid fa-trash-can"></i></span>
+                <span data-id="${id}"><i class="fa-solid fa-trash-can"></i></span>
             </div>
         </div>
     `;
@@ -34,9 +34,25 @@ async function newProduct(event) {
     const price = document.querySelector('#product-price').value
     const imageUrl =  document.querySelector('#product-image').value.trim()
     if(name !== '' || imageUrl !== '' ) {
-        connectionAPI.createNewProduct(name, price, imageUrl)  
+        connectionAPI.createNewProduct(name, price, imageUrl)
+        window.location.reload()
     } else {
         console.log('Campos vacios');
     }
 }
 formData.addEventListener('submit', event => newProduct(event))
+
+// DELETE product
+
+const ids = document.querySelectorAll('.product__info span')
+ids.forEach(id => {
+   id.addEventListener('click', () => {
+    const deleteData = confirm('Estas seguro de eliminar')
+    if(deleteData) {
+        console.log('Borrar', id.getAttribute("data-id"));
+        connectionAPI.deleteProduct(id.getAttribute('data-id'))
+    } else {
+        return
+    }
+   })
+})

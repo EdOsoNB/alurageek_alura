@@ -38,8 +38,24 @@ async function createNewProduct(name, price, urlImage) {
     }
 }
 
+// DELETE product
+async function deleteProduct(id) {
+    try {
+        const product = await fetch(`${url}/${id}`, {
+            method: 'DELETE',
+            headers: {"Content-type": "application/json"}
+        })
+
+        if(!product.ok) {
+            throw new Error("Error al eliminar el producto")
+        }
+    } catch(error) {
+        console.log(error);
+    }
+}
 
 export const connectionAPI = {
     getProducts, 
-    createNewProduct
+    createNewProduct,
+    deleteProduct
 }
