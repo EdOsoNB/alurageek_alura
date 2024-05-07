@@ -49,8 +49,8 @@ ids.forEach(id => {
    id.addEventListener('click', () => {
     const deleteData = confirm('Estas seguro de eliminar')
     if(deleteData) {
-        console.log('Borrar', id.getAttribute("data-id"));
         connectionAPI.deleteProduct(id.getAttribute('data-id'))
+        window.location.reload()
     } else {
         return
     }
